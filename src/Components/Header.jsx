@@ -1,41 +1,73 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-      <div>
-        <div className="navbar bg-base-100">
+      <div >
+        <div className="navbar bg-indigo-50 mx-auto">
           <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+            <a className="btn btn-ghost normal-case text-3xl">
+              Delicious Indian Cuisine
+            </a>
           </div>
           <div className="flex-none">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal px-1 text-2xl">
               <li>
-                <a>Item 1</a>
+                <NavLink
+                  to="/"
+                  aria-label="Home"
+                  title="Home"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                      : "default"
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
-              <li tabIndex={0}>
-                <a>
-                  Parent
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                  </svg>
-                </a>
-                <ul className="p-2 bg-base-100">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+
+              <li>
+                <NavLink
+                  to="/blog"
+                  aria-label="Home"
+                  title="Home"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                      : "default"
+                  }
+                >
+                 BLog
+                </NavLink>{" "}
               </li>
               <li>
-                <a>Item 3</a>
+                <NavLink
+                  to="/login"
+                  aria-label="Home"
+                  title="Home"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                      : "default"
+                  }
+                >
+                Login
+                </NavLink>{" "}
+              </li>
+              <li>
+                <NavLink
+                  to="/register"
+                  aria-label="Home"
+                  title="Home"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                      : "default"
+                  }
+                >
+              Register
+                </NavLink>{" "}
               </li>
             </ul>
           </div>

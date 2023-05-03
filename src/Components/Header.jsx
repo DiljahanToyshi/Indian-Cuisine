@@ -2,8 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  
+
     return (
-      <div >
+      <div className='px-3 py-5 sm:max-w-xl lg:max-w-screen-xl' >
         <div className="navbar bg-indigo-50 mx-auto">
           <div className="flex-1">
             <a className="btn btn-ghost normal-case text-3xl">
@@ -26,12 +28,11 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
-
               <li>
                 <NavLink
                   to="/blog"
                   aria-label="Home"
-                  title="Home"
+                  title="Blog"
                   className={({ isActive }) =>
                     isActive
                       ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
@@ -40,12 +41,11 @@ const Header = () => {
                 >
                  BLog
                 </NavLink>{" "}
-              </li>
-              <li>
+             
                 <NavLink
                   to="/login"
                   aria-label="Home"
-                  title="Home"
+                  title="Login"
                   className={({ isActive }) =>
                     isActive
                       ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
@@ -59,7 +59,7 @@ const Header = () => {
                 <NavLink
                   to="/register"
                   aria-label="Home"
-                  title="Home"
+                  title="Register"
                   className={({ isActive }) =>
                     isActive
                       ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"

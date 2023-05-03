@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import LeftNav from './LefNav';
+import RightNav from './RightNav';
 
 const Home = () => {
       const [meals, setMeals] = useState([]);
@@ -9,9 +11,16 @@ const Home = () => {
           .catch((error) => console.log(error));
       }, []);
     return (
-        <div>
-            <p>homeeee</p>
-        </div>
+      <div>
+        <p>homeeee</p>
+        
+        <div className="grid grid-cols-3 gap-4 mx-auto">
+            <div className=" bg-slate-500 ...">
+             <LeftNav></LeftNav>
+            </div>
+            <div className=" bg-green-100 lg:col-span-2 "><RightNav></RightNav></div>
+          </div>
+      </div>
     );
 };
 

@@ -12,12 +12,12 @@ const Main = () => {
         <Header></Header>
         <div className="min-h-[calc(100vh-136px)] ">
           <Outlet></Outlet>
-          <div className="grid grid-cols-3 gap-4 mx-auto">
+          {/* <div className="grid grid-cols-3 gap-4 mx-auto">
             <div className=" bg-slate-500 ...">
               <LefNav></LefNav>
             </div>
-            <div className=" bg-green-100 lg:col-span-2 "><RightNav>J</RightNav> </div>
-          </div>
+            <div className=" bg-green-100 lg:col-span-2 "></div>
+          </div> */}
         </div>
 
         <Footer></Footer>

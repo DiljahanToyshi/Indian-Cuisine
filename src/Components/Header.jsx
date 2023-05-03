@@ -5,7 +5,7 @@ const Header = () => {
   
 
     return (
-      <div className='px-3 py-5 sm:max-w-xl lg:max-w-screen-xl' >
+      <div className='px-3 py-5 sm:max-w-xl lg:max-w-screen-2xl' >
         <div className="navbar bg-indigo-50 mx-auto">
           <div className="flex-1">
             <a className="btn btn-ghost normal-case text-3xl">

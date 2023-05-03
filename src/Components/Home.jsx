@@ -30,13 +30,9 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-4 mx-auto">
-          <div className=" bg-slate-500 ...">
-            <LeftNav></LeftNav>
-          </div>
-          <div className=" bg-green-100 lg:col-span-2 ">
-            <RightNav></RightNav>
-          </div>
+        <div className='text-center'>
+          {" "}
+          <LeftNav></LeftNav>
         </div>
       </div>
     );

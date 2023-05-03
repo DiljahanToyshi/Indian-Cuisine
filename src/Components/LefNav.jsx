@@ -1,6 +1,7 @@
 import { Container } from "postcss";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 const LeftNav = () => {
   const [chefs, setChefs] = useState([]);
   useEffect(() => {
@@ -12,14 +13,21 @@ const LeftNav = () => {
 
   return (
     <div className="container mt-12">
-      <h2>all chefs</h2>
-      {chefs.map(chef => (
-        <p key={chef.id}>
-          <Link to={`/chef/${chef.id}`} className="text-3xl font-serif">
-            {chef.Chef_Name}
-          </Link>
-        </p>
-      ))}
+      <h2 className="text-4xl mt-36 mb-20 font-serif text-white">Know Our Chefs </h2>
+      <div className="">
+        <Marquee>
+          {chefs.map((chef) => (
+            <div key={chef.id} className="mx-3">
+              <img
+                className="object-fill w-80 h-56 md:h-56 xl:h-80 rounded-lg mx-1"
+                src={chef.Chef_Picture}
+                alt=""
+              />
+              <p>{chef.Chef_Name}</p>
+            </div>
+          ))}
+        </Marquee>
+      </div>
     </div>
   );
 };

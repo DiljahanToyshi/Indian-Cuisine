@@ -12,11 +12,14 @@ import Blog from "./Components/Blog.jsx";
 import AuthProvider from "./Components/providers/AuthProvider.jsx";
 import ChefDetails from "./Components/ChefDetails.jsx";
 import ChefsLayout from "./Layout/ChefsLayout.jsx";
+import ErrorPage from "./Components/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+
     children: [
       {
         path: "/",
@@ -27,14 +30,9 @@ const router = createBrowserRouter([
         element: <Chefs></Chefs>,
         loader: () => fetch(`http://localhost:5000/chefs`),
       },
-      // {
-      //   path: "/chefs/:id",
-      //   element: <ChefDetails></ChefDetails>,
-      //   loader: ({ params }) =>
-      //     fetch(`http://localhost:5000/chefs/${params.id}`),
-      // },
+
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
@@ -47,15 +45,18 @@ const router = createBrowserRouter([
       },
     ],
   },
-  { path: "chefs", element: <ChefsLayout></ChefsLayout>,
-children:[
-   {
+  {
+    path: "chefs",
+    element: <ChefsLayout></ChefsLayout>,
+    children: [
+      {
         path: "/chefs/:id",
         element: <ChefDetails></ChefDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/chefs/${params.id}`),
       },
-] },
+    ],
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

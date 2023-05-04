@@ -46,22 +46,26 @@ const Header = () => {
                 </NavLink>{" "}
               </li>
               <li>
-                <NavLink
-                  aria-label="Home"
-                  title="login"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
-                      : "default"
-                  }
-                >
-                  Login
-                </NavLink>{" "}
+              
+                  <NavLink to='/login'
+                    aria-label="Home"
+                    title="login"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                        : "default"
+                    }
+                  >
+                    Login
+                  </NavLink>
+             
               </li>
               <li>
-                <Link  aria-label="Home" title="profile">
-                  <FaUserCircle  style={{fontSize:'2rem'}}/>
-                </Link>{" "}
+                {user && (
+                  <NavLink aria-label="Home" title="profile">
+                    <FaUserCircle style={{ fontSize: "2rem" }} />
+                  </NavLink>
+                )}
               </li>
               <li>
                 <NavLink

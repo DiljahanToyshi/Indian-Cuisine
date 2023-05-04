@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RecipeDetails = ({recipe}) => {
-    console.log(recipe);
+    // console.log(recipe);
     const {
       strMealThumb,
       price,

@@ -1,11 +1,14 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from './providers/AuthProvider';
+import { FaBeer,FaUserCircle } from "react-icons/fa";
+
 
 const Header = () => {
-  
+  const {user} =useContext(AuthContext)
 
     return (
-      <div className='px-3 py-5 sm:max-w-xl lg:max-w-screen-2xl' >
+      <div className="px-3 py-5 sm:max-w-xl lg:max-w-screen-2xl">
         <div className="navbar bg-indigo-50 mx-auto">
           <div className="flex-1">
             <a className="btn btn-ghost normal-case text-3xl">
@@ -39,21 +42,26 @@ const Header = () => {
                       : "default"
                   }
                 >
-                 BLog
+                  BLog
                 </NavLink>{" "}
-             
+              </li>
+              <li>
                 <NavLink
-                  to="/login"
                   aria-label="Home"
-                  title="Login"
+                  title="login"
                   className={({ isActive }) =>
                     isActive
                       ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
                       : "default"
                   }
                 >
-                Login
+                  Login
                 </NavLink>{" "}
+              </li>
+              <li>
+                <Link  aria-label="Home" title="profile">
+                  <FaUserCircle  style={{fontSize:'2rem'}}/>
+                </Link>{" "}
               </li>
               <li>
                 <NavLink
@@ -66,7 +74,7 @@ const Header = () => {
                       : "default"
                   }
                 >
-              Register
+                  Register
                 </NavLink>{" "}
               </li>
             </ul>

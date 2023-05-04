@@ -13,17 +13,30 @@ const LeftNav = () => {
 
   return (
     <div className="container mt-12">
-      <h2 className="text-4xl mt-36 mb-20 font-serif text-white">Know Our Chefs </h2>
+      <h2 className="text-4xl mt-36 mb-20 font-serif text-white">
+        Know Our Chefs{" "}
+      </h2>
       <div className="">
         <Marquee>
           {chefs.map((chef) => (
-            <div key={chef.id} className="mx-3">
+            <div key={chef.id} className="mx-3 text-white">
               <img
                 className="object-fill w-80 h-56 md:h-56 xl:h-80 rounded-lg mx-1"
                 src={chef.Chef_Picture}
                 alt=""
               />
-              <p>{chef.Chef_Name}</p>
+              <div className="text-start md:ml-4">
+                {" "}
+                <p>Name:{chef.Chef_Name}</p>
+                <p>Experience:{chef.Years_of_experience}Years</p>
+                <p>Recipes:{chef.Numbers_of_recipes}</p>
+                <p>Like:{chef.Likes}</p>
+                <Link to={`/chefs/${chef.id}`}>
+                  <button className="bg-amber-400 text-white rounded-md px-3 py-3">
+                    View Recipes Button
+                  </button>
+                </Link>
+              </div>
             </div>
           ))}
         </Marquee>

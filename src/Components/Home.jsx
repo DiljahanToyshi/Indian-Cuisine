@@ -15,7 +15,7 @@ const Home = () => {
         <p>homeeee</p>
         <div className="grid gap-6 mb-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-lg">
           {meals.map((meal) => (
-            <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
+            <div key={meal.id} className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2 rounded shadow-lg hover:shadow-2xl">
               <img
                 className="object-fill w-full h-56 md:h-56 xl:h-80"
                 src={meal.strMealThumb}

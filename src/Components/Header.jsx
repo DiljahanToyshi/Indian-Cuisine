@@ -2,11 +2,17 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
 import { FaBeer,FaUserCircle } from "react-icons/fa";
+import { signOut } from 'firebase/auth';
 
 
 const Header = () => {
-  const {user} =useContext(AuthContext)
-
+  const {user,logOut} =useContext(AuthContext);
+  const hanldeLogOut =() =>{
+    logOut () 
+    .then(result =>{} )
+    .catch(error =>console.log(error))
+  }
+  
     return (
       <div className="px-3 py-5 sm:max-w-xl lg:max-w-screen-2xl">
         <div className="navbar bg-indigo-50 mx-auto">
@@ -44,41 +50,44 @@ const Header = () => {
                 >
                   BLog
                 </NavLink>{" "}
-              </li>
-              <li>
-              
-                  <NavLink to='/login'
-                    aria-label="Home"
-                    title="login"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
-                        : "default"
-                    }
-                  >
-                    Login
-                  </NavLink>
-             
-              </li>
-              <li>
+            </li>
+            { user ? 
+            <li>
                 {user && (
-                  <NavLink aria-label="Home" title="profile">
-                    <FaUserCircle style={{ fontSize: "2rem" }} />
-                  </NavLink>
+                  <div>
+                    <img className='h-14 rounded-full'
+                      src={user?.photoURL}
+                      alt=""
+                      title={user.displayName}
+                    />{" "} <button className='pl-4' onClick={hanldeLogOut} >SignOut</button>
+                  </div>
                 )}
-              </li>
+              </li>:<li>
+              <NavLink
+                to="/login"
+                aria-label="Home"
+                title="login"
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
+                    : "default"
+                }
+              >
+                Login
+              </NavLink>
+            </li> }
               <li>
                 <NavLink
-                  to="/register"
+                  to="/SignUp"
                   aria-label="Home"
-                  title="Register"
+                  title="SignUp"
                   className={({ isActive }) =>
                     isActive
                       ? "font-medium tracking-wide text-cyan-600 transition-colors duration-200"
                       : "default"
                   }
                 >
-                  Register
+                  SignUp
                 </NavLink>{" "}
               </li>
             </ul>

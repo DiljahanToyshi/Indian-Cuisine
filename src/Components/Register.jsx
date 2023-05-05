@@ -91,7 +91,6 @@ const Register = () => {
                 name="url"
                 placeholder="Your photo"
                 className="input input-bordered"
-                
               />
             </div>
             <div className="form-control">
@@ -140,7 +139,7 @@ const Register = () => {
               <p className="text-green-600 text-xl font-semibold">{success}</p>
               <label className="label">
                 <Link to="/login" className="label-text-alt link link-hover">
-                  Already have an account?Please Login
+                  Already have an account?<span className="text-amber-600">Please Login</span>
                 </Link>
               </label>
             </div>

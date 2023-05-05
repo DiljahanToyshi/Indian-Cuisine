@@ -14,6 +14,7 @@ import ChefDetails from "./Components/ChefDetails.jsx";
 import ChefsLayout from "./Layout/ChefsLayout.jsx";
 import ErrorPage from "./Components/ErrorPage.jsx";
 import PrivateRoute from "./Components/Routes/PrivateRoute.jsx";
+import SignUp from "./Components/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const router = createBrowserRouter([
       {
         path: "/chefs",
         element: <Chefs></Chefs>,
-        loader: () => fetch(`http://localhost:5000/chefs`),
+        loader: () =>
+          fetch(`https://assignment-10-server-diljahantoyshi.vercel.app/chefs`),
       },
 
       {
@@ -37,8 +39,8 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "/register",
-        element: <Register></Register>,
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
       {
         path: "/blog",
@@ -58,7 +60,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/chefs/${params.id}`),
+          fetch(
+            `https://assignment-10-server-diljahantoyshi.vercel.app/chefs/${params.id}`
+          ),
       },
     ],
   },

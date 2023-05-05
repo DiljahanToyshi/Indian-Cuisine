@@ -26,7 +26,7 @@ const ChefDetails = () => {
           <figure>
             <img src={Chef_Picture} className="rounded-xl" alt="car!" />
           </figure>
-          <div className="card-body md:inline-block md:ml-80 md:pl-80">
+          <div className="card-body md:inline-block md:ml-72 md:pl-64">
             <h2 className="card-title text-2xl font-serif">{Chef_Name}</h2>
             <p>
               <span className="text-xl font-serif"> Recipes:</span>
@@ -57,23 +57,6 @@ const ChefDetails = () => {
 };
 
 export default ChefDetails; 
- {/* {
- chef.map((c) => (
-            <div key={c.id} className="mx-3 text-white">
-              <img
-                className="object-fill w-80 h-56 md:h-56 xl:h-80 rounded-lg mx-1"
-                src={c.Chef_Picture}
-                alt=""
-              />
-              <div className="text-start md:ml-4">
-                {" "}
-                <p>Name:{c.Chef_Name}</p>
-                <p>Experience:{c.Years_of_experience}Year</p>
-                <p>Recipes:{c.Numbers_of_recipes}</p>
-                <p>Like:{c.Likes}</p>
-              
-              </div>
-            </div>
-          ))} */}
+
            
            

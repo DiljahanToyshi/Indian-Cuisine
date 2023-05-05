@@ -115,6 +115,7 @@ signInWithPopup(auth,provider)
                     type={show ? "text" : "password"}
                     name="password"
                     id=""
+                    placeholder="your password"
                     required
                   />
                 </div>
@@ -131,11 +132,14 @@ signInWithPopup(auth,provider)
                 </div>
               </div>
 
-              <label className="label">
-                <Link to="/register" className="label-text-alt link link-hover">
-                  Dont't have an account? Please Register
+              <p className="mb-4 ">
+                <Link to="/signup" className="label-text-alt link link-hover">
+                  New to Delicious Indian Cuisine?{" "}
+                  <span className="text-amber-600">
+                    Please create an account
+                  </span>
                 </Link>
-              </label>
+              </p>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-amber-400 text-white">Login</button>
@@ -143,22 +147,11 @@ signInWithPopup(auth,provider)
           </form>
           <button
             onClick={handleGoogleSignIn}
-            className="btn btn-outline w-56 ml-10"
+            className="btn btn-outline w-56 ml-10 mb-5"
           >
             {" "}
             <FaGoogle className="mr-3" /> Login with Google
           </button>
-          {user && (
-            <div>
-              <p> User:{user.displayName}</p>
-              <img src={user.photoURL} alt="" />{" "}
-            </div>
-          )}
-          <p className="mb-4 ml-8">
-            <Link to="/register" className="label-text-alt link link-hover">
-              New to Delicious Indian Cuisine? Please Register
-            </Link>
-          </p>
 
           <p className="text-red-600 text-xl font-semibold">{error}</p>
           <p className="text-green-600 text-xl font-semibold">{success}</p>

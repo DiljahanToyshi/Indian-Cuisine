@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+    /* .title-text{
+      @apply  text-center animate-text text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-400 bg-clip-text text-transparent font-black
+    } */
+  

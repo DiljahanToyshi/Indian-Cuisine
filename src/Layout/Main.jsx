@@ -9,7 +9,7 @@ const Main = () => {
     return (
       <div className="">
         <Header></Header>
-        <Marquee className=" p-8  ">
+        <Marquee className=" p-8 ">
           <p className="text-center  text-5xl text-amber-300 font-serif ">
             Welcome To Indian Cuisine
           </p>

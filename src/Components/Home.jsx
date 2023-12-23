@@ -15,9 +15,9 @@ const Home = () => {
       .catch((error) => console.log(error));
   }, []);
   return (
-    <div className='md:container sm:mx-auto md:ml-24 bg-[url("https://i.ibb.co/F4fNdtJ/download.jpg")] bg-no-repeat bg-cover bg-fixed w-full h-full '>
+    <div className='mx-auto  bg-[url("https://media-cdn.tripadvisor.com/media/photo-s/1b/43/a2/c3/restaurant-blue-dining.jpg")] bg-no-repeat bg-cover bg-fixed w-full h-full '>
       {" "}
-      <div className="grid gap-6 mb-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-lg">
+      <div className="grid gap-6 mb-8 p-8 md:p-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-lg">
         {meals.slice(0, showAll ? 12 : 6).map((meal) => (
           <div
             key={meal.id}
@@ -28,10 +28,10 @@ const Home = () => {
               src={meal.strMealThumb}
               alt=""
             />
-            <div className="bg-amber-700 px-6 py-4 bg-opacity-75 opacity-0 hover:opacity-100 text-gray-300 absolute inset-0 transition-opacity duration-200 pt-32 text-center ">
-              <p className="font-serif text-2xl ">{meal.strMeal}</p>
+            <div className="bg-orange-400 px-6 py-4 bg-opacity-75 opacity-0 hover:opacity-100 text-white font-bold absolute inset-0 transition-opacity duration-200 pt-20 lg:pt-32 text-center ">
+              <p className="text-center font-serif text-2xl ">{meal.strMeal}</p>
 
-              <p className="mt-auto">Price: {meal.price}TK</p>
+              <p className="text-center">Price: {meal.price}TK</p>
             </div>
           </div>
         ))}
@@ -54,13 +54,14 @@ const Home = () => {
         <h2 className="text-4xl mt-14 m-5 text-center font-serif text-amber-700">
           Our Client Reviews{" "}
         </h2>
-        <Review></Review>
+        
+        {/* <Review></Review> */}
       </div>
       <div>
         <h2 className="text-4xl mt-14 m-5 text-center font-serif text-amber-700">
           Our Services{" "}
         </h2>
-        <Service></Service>
+        {/* <Service></Service> */}
       </div>
     </div>
   );

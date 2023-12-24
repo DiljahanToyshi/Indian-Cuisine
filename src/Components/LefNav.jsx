@@ -10,29 +10,28 @@ const LeftNav = () => {
       .then((data) => setChefs(data))
       .catch((error) => console.log(error));
   }, []);
-
   return (
-    <div className="container mt-12">
-      <h2 className="text-4xl mt-36 mb-20 font-serif text-white">
+    <div className="mt-6 md:mt-12">
+      <h2 className=" title-text">
         Know Our Chefs{" "}
       </h2>
-      <div className="">
-        <Marquee>
+      
+      <Marquee>
           {chefs.map((chef) => (
-            <div key={chef.id} className="mx-3 text-white">
+            <div key={chef.id} className="mx-3 rounded-lg font-medium text-lg shadow-md bg-orange-200 ">
               <img
-                className="object-fill w-80 h-56 md:h-56 xl:h-80 rounded-lg mx-1"
-                src={chef.Chef_Picture}
+                className="object-fill w-80 h-56 xl:h-80 rounded-xl p-4 md:p-6"
+                src={chef?.Chef_Picture}
                 alt=""
               />
-              <div className="text-start md:ml-4">
+              <div className="text-start ml-4 md:ml-6">
                 {" "}
-                <p>Name:{chef.Chef_Name}</p>
-                <p>Experience:{chef.Years_of_experience}Years</p>
-                <p>Recipes:{chef.Numbers_of_recipes}</p>
-                <p>Like:{chef.Likes}</p>
-                <Link to={`/chefs/${chef.id}`}>
-                  <button className="bg-amber-400 text-white rounded-md px-3 py-3">
+                <p>Name:{chef?.Chef_Name}</p>
+                <p>Experience:{chef?.Years_of_experience}Years</p>
+                <p>Recipes:{chef?.Numbers_of_recipes}</p>
+                <p>Like:{chef?.Likes}</p>
+                <Link to={`/chefs/${chef.id}`} className="text-center">
+                  <button className="btn-primary px-3 py-3 mb-3 md:mb-5">
                     View Recipes Button
                   </button>
                 </Link>
@@ -40,7 +39,6 @@ const LeftNav = () => {
             </div>
           ))}
         </Marquee>
-      </div>
     </div>
   );
 };

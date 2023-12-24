@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
 import { FaBeer,FaUserCircle } from "react-icons/fa";
 import { signOut } from 'firebase/auth';
-import { ShoppingCartIcon } from '@heroicons/react/24/solid'
 import logo from '../assets/logo.png'
 
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
   }
   
     return (
-      <div className="px-3 py-5 sm:max-w-xl lg:max-w-screen-2xl">
+      <div className="px-3 py-5 sm:max-w-xl lg:min-w-full">
         <div className="hidden lg:inline-flex navbar bg-yellow-50 mx-auto">
           <div className="flex-1">
             <a className="btn btn-ghost normal-case font-serif text-3xl">

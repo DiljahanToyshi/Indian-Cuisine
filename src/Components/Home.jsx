@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div className='mx-auto  bg-[url("https://media-cdn.tripadvisor.com/media/photo-s/1b/43/a2/c3/restaurant-blue-dining.jpg")] bg-no-repeat bg-cover bg-fixed w-full h-full '>
       {" "}
-      <div className="grid gap-6 mb-8 p-8 md:p-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-lg">
+      <div className="grid gap-6  p-6  lg:p-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-lg">
         {meals.slice(0, showAll ? 12 : 6).map((meal) => (
           <div
             key={meal.id}
@@ -40,7 +40,7 @@ const Home = () => {
         <div className="text-center">
           <button
             onClick={handleShowALl}
-            className="bg-amber-400 sm:ml-2  text-white rounded-md px-3 py-3"
+            className="btn-primary "
           >
             Show All
           </button>
@@ -51,14 +51,14 @@ const Home = () => {
         <LeftNav></LeftNav>
       </div>
       <div>
-        <h2 className="text-4xl mt-14 m-5 text-center font-serif text-amber-700">
+        <h2 className="title-text">
           Our Client Reviews{" "}
         </h2>
         
-        {/* <Review></Review> */}
+        <Review></Review>
       </div>
       <div>
-        <h2 className="text-4xl mt-14 m-5 text-center font-serif text-amber-700">
+      <h2 className="title-text">
           Our Services{" "}
         </h2>
         {/* <Service></Service> */}

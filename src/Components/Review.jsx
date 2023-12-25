@@ -10,7 +10,7 @@ const Review = () => {
             src={`https://i.ibb.co/mDbY60m/download-3.jpg`}
             alt="img"
           />
-          <p>Matthew P. Princeton, NJ</p>
+          <p>Matthew P. Princeton, NJ</p> 
         </div>
 
         <p className="px-3 pb-3 md:px-5 ">

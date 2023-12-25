@@ -61,7 +61,7 @@ const Home = () => {
       <h2 className="title-text">
           Our Services{" "}
         </h2>
-        {/* <Service></Service> */}
+        <Service></Service>
       </div>
     </div>
   );

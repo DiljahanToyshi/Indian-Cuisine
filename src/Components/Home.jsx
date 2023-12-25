@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LeftNav from "./LefNav";
 import Review from "./Review";
-import Service from "./Service";
+import About from "./About";
 const Home = () => {
   const [meals, setMeals] = useState([]);
   const [showAll, setShowALl] = useState(false);
@@ -58,10 +58,7 @@ const Home = () => {
         <Review></Review>
       </div>
       <div>
-      <h2 className="title-text">
-          Our Services{" "}
-        </h2>
-        <Service></Service>
+        <About/>
       </div>
     </div>
   );

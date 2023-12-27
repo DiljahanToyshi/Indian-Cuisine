@@ -7,7 +7,6 @@ import Main from "./Layout/Main.jsx";
 import Home from "./Components/Home.jsx";
 import Chefs from "./Components/Chefs.jsx";
 import Login from "./Components/Login.jsx";
-import Register from "./Components/Register.jsx";
 import Blog from "./Components/Blog.jsx";
 import AuthProvider from "./Components/providers/AuthProvider.jsx";
 import ChefDetails from "./Components/ChefDetails.jsx";
@@ -20,7 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
 
     children: [
       {

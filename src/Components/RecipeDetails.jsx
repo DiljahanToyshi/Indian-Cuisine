@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import {   FaHeart} from 'react-icons/fa';
 const RecipeDetails = ({ recipe }) => {
-  // console.log(recipe);
   const [fav, setFav] = useState(false);
   const [fold, setFold] = useState(true);
 

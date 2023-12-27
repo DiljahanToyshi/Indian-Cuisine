@@ -103,6 +103,8 @@ const Header = () => {
               />
             </svg>
           </button>
+          <p className="btn btn-ghost normal-case font-serif text-xl">Delicious Indian Cuisine</p>
+
           {isMenuOpen && (
             <div className='absolute z-10 top-0 left-0 w-full'>
               <div className='p-5 bg-yellow-50 border rounded shadow-sm'>

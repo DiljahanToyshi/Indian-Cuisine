@@ -5,7 +5,6 @@ import {  GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPop
 import {
   FaGoogle,
 } from "react-icons/fa";
-import { Button } from "bootstrap";
 import app from "../firebase/firebase.config";
 
 
@@ -145,15 +144,18 @@ signInWithPopup(auth,provider)
               <button className="btn bg-amber-400 text-white">Login</button>
             </div>
           </form>
+          <div className="text-center text-orange-500">
+
           <button
             onClick={handleGoogleSignIn}
-            className="btn btn-outline w-56 ml-10 mb-5"
+            className="btn btn-outline  md:w-56 mb-3 md:mb-5 text-amber-500"
           >
             {" "}
-            <FaGoogle className="mr-3" /> Login with Google
-          </button>
+            <FaGoogle className="" /> Login with Google
+          </button>          </div>
 
-          <p className="text-red-600 text-xl font-semibold">{error}</p>
+
+          <p className="text-red-600 text-xl font-semibold py-4 px-3 md:px-5">{error}</p>
           <p className="text-green-600 text-xl font-semibold">{success}</p>
         </div>
       </div>

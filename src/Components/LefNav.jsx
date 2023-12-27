@@ -7,7 +7,6 @@ import { FaThumbsUp } from "react-icons/fa";
 
 const LeftNav = () => {
   const { chefs } = useContext(AuthContext);
-
   return (
     <div className="mt-6 md:mt-12">
       <h2 className=" title-text">Know Our Chefs </h2>

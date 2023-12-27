@@ -11,7 +11,6 @@ const ChefDetails = () => {
     retrun < LoadingSpinner > <LoadingSpinner />;
   }
   const chefs = useLoaderData();
-console.log(chefs)
   const {
     Chef_Name,
     recipes,

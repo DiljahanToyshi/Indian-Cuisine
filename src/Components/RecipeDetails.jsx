@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 const RecipeDetails = ({recipe}) => {
     // console.log(recipe);
         const [store, setStore] = useState([]);
+        const [fold, setFold] = useState(true)
 
     const favourite = recipe => {
       console.log(recipe);

@@ -10,3 +10,6 @@
         @apply  text-center text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent font-extrabold my-2 mb-4 md:my-4 lg:my-8
       }
     }
+    .text-tag{
+      @apply text-xl font-semibold text-neutral
+    }

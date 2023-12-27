@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import RecipeDetails from './RecipeDetails';
 import LoadingSpinner from './LoadingSpinner';
+import { FaThumbsUp } from 'react-icons/fa';
 
 const ChefDetails = () => {
   const navigation = useNavigation();
@@ -10,40 +11,53 @@ const ChefDetails = () => {
     retrun < LoadingSpinner > <LoadingSpinner />;
   }
   const chefs = useLoaderData();
-
+console.log(chefs)
   const {
     Chef_Name,
     recipes,
     Chef_Picture,
-    Numbers_of_recipes,
+    Numbers_of_recipes,Years_of_experience
+,
     Likes,
     description,
   } = chefs;
   return (
     <div>
-      <div className="place-content-center">
-        <div className=" md:inline card w-96 glass place-content-center">
-          <figure>
-            <img src={Chef_Picture} className="rounded-xl" alt="car!" />
+      <div className="">
+      <div className="lg:flex lg:flex-row-reverse gap-8 bg-slate-100 shadow-xl lg:px-40 lg:py-20 py-10">
+      <figure className="flex justify-center w-full lg:w-2/5">
+            <img src={Chef_Picture} className="rounded-lg lg:h-80" alt="car!" />
           </figure>
-          <div className="card-body md:inline-block md:ml-72 md:pl-64">
-            <h2 className="card-title text-2xl font-serif">{Chef_Name}</h2>
-            <p>
-              <span className="text-xl font-serif"> Recipes:</span>
-              {Numbers_of_recipes}
-            </p>
-            <p>
-              <span className="text-xl font-serif"> Like:</span>
-              {Likes}
-            </p>
-            <p className="w-80">
-              <span className=" text-xl font-serif"> Description:</span>{" "}
-              {description}
-            </p>
+          <div className="text-left text-neutral lg:w-3/5 self-center space-y-3 p-8 lg:p-0">
+          <h2 className="text-3xl font-bold tracking-wide text-orange-600 ">
+              {Chef_Name}</h2>
+              <h2 className="text-tag">
+								Signature Recipes :
+								<span className="text-base"> {Numbers_of_recipes} items</span>
+							</h2>
+              <h2 className="text-tag">
+								{Years_of_experience
+} years of Experience
+							</h2>
+            <div className="mt-0">
+								<button className="btn-primary m-0 cursor-none">
+									<div className="flex justify-between">
+										<p className="text-xl font-semibold text-orange-600 flex gap-1">
+											<FaThumbsUp />
+											<span className="ml-2 -mt-1">{Likes}K</span>
+										</p>
+									</div>
+								</button>
+							</div>
+            <h2 className="text-tag">
+								Bio :
+								<span className="text-base leading-loose"> {description}</span>
+							</h2>
           </div>
         </div>
-        <h2 className="my-10 text-4xl font-serif text-center">
-          The Recipes Are :
+        
+        <h2 className="my-10 text-4xl font-serif title-text">
+        Signature Recipes of :{Chef_Name}
         </h2>
         <div className="mx-auto">
           {recipes.map((recipe) => (
@@ -53,6 +67,7 @@ const ChefDetails = () => {
       </div>
       
     </div>
+    
   );
 };
 
